@@ -1,9 +1,6 @@
 public class Library{
-<<<<<<< HEAD
+
 	private Book[] Books = new Book[10];  
-=======
-	private Book[] Books = new Book[100];  
->>>>>>> Test
 	private String address; 
 	private int numBooks = 0; 
 	
@@ -26,9 +23,6 @@ public class Library{
 			if (Books[i] == null){
 				continue;
 			} else {
-<<<<<<< HEAD
-				System.out.println(Books[i].getTitle()); 
-=======
 				if (Books[i].isBorrowed() == false){
 					System.out.println(Books[i].getTitle()); 
 				} else {
@@ -53,7 +47,6 @@ public class Library{
 					System.out.println("You successfully borrowed "+ title + "."); 
 					break; 
 				}
->>>>>>> Test
 			}
 		}
 		
@@ -71,12 +64,10 @@ public class Library{
 		firstLibrary.printAvailableBooks(); 
 		System.out.println(); 
 		secLibrary.printAvailableBooks(); 
-<<<<<<< HEAD
-=======
 		System.out.println(); 
 		firstLibrary.borrowBook("A Tale of Two Cities"); 
 		System.out.println(); 
 		firstLibrary.printAvailableBooks(); 
->>>>>>> Test
+
 	}
 }

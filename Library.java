@@ -18,6 +18,7 @@ public class Library{
 	}
 	
 	void printAvailableBooks(){
+		System.out.println("This library currently has these books available: "); 
 		for (int i=0; i<catalog.length; i++){ 
 			if (catalog[i] == null){
 				break; 
@@ -31,7 +32,13 @@ public class Library{
 		Library firstLibrary = new Library("10 Main St."); 
 		Library secLibrary = new Library("228 Liberty Street"); 
 		printOpeningHours(); 
+		space.set(); 
 		firstLibrary.addBook(new Book("A Tale of Two Cities"));
+		firstLibrary.addBook(new Book("The Da Vinci Code")); 
+		secLibrary.addBook(new Book("The Lion King")); 
+		secLibrary.addBook(new Book("A Tale of Two Cities")); 
 		firstLibrary.printAvailableBooks();
+		space.set(); 
+		secLibrary.printAvailableBooks(); 
 	}
 }

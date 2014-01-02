@@ -1,6 +1,7 @@
 public class Library{
-	String[] catalog = new String[1];  
-	String address; 
+	private String[] catalog = new String[100];  
+	private String address; 
+	private int counter = 0; 
 	
 	public Library(String libAddress){
 		address = libAddress; 
@@ -11,13 +12,18 @@ public class Library{
 	}
 	
 	void addBook(Book newBook){
-		String[] newTitle = {newBook.title}; 
-		catalog[0] = newTitle[0]; 
+		String[] newTitle = {newBook.getTitle()}; 
+		catalog[counter] = newTitle[0]; 
+		counter++; 
 	}
 	
 	void printAvailableBooks(){
 		for (int i=0; i<catalog.length; i++){ 
+			if (catalog[i] == null){
+				break; 
+			} else {
 			System.out.println(catalog[i]); 
+			}
 		}
 	}
 	

@@ -1,7 +1,7 @@
 public class Library{
-	private String[] catalog = new String[100];  
+	private Book[] Books = new Book[10];  
 	private String address; 
-	private int counter = 0; 
+	private int numBooks = 0; 
 	
 	public Library(String libAddress){
 		address = libAddress; 
@@ -12,33 +12,33 @@ public class Library{
 	}
 	
 	void addBook(Book newBook){
-		String[] newTitle = {newBook.getTitle()}; 
-		catalog[counter] = newTitle[0]; 
-		counter++; 
+		Books[numBooks] = newBook; 
+		numBooks++;
 	}
 	
 	void printAvailableBooks(){
-		System.out.println("This library currently has these books available: "); 
-		for (int i=0; i<catalog.length; i++){ 
-			if (catalog[i] == null){
-				break; 
+		System.out.println("The library at " + address + " currently has these books available: "); 
+		for (int i=0; i<Books.length; i++){ 
+			if (Books[i] == null){
+				continue;
 			} else {
-			System.out.println(catalog[i]); 
+				System.out.println(Books[i].getTitle()); 
 			}
 		}
+		
 	}
 	
 	public static void main(String[] args){
 		Library firstLibrary = new Library("10 Main St."); 
 		Library secLibrary = new Library("228 Liberty Street"); 
 		printOpeningHours(); 
-		space.set(); 
+		System.out.println(); 
 		firstLibrary.addBook(new Book("A Tale of Two Cities"));
 		firstLibrary.addBook(new Book("The Da Vinci Code")); 
 		secLibrary.addBook(new Book("The Lion King")); 
 		secLibrary.addBook(new Book("A Tale of Two Cities")); 
-		firstLibrary.printAvailableBooks();
-		space.set(); 
+		firstLibrary.printAvailableBooks(); 
+		System.out.println(); 
 		secLibrary.printAvailableBooks(); 
 	}
 }

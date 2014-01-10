@@ -1,76 +1,78 @@
+// Developer: Zachary Donato
+// Date: 1.8.14
+
 import java.util.Random; 
-import java.util.TreeMap;
 import java.util.Scanner; 
 
+// A class to play the game. 
 public class playGame {
-	private static TreeMap<String, String> food = new TreeMap<String, String>();
-	static boolean loopCheck = true; 
-	static boolean playCheck = true;
+	static boolean turnCheck = true; // Bool value to ensure the player has made a move before switching to the other player's turn. 
 	private static int dmg; 
 	private static Random generator = new Random(); 
 	
 	public static void main(String[] args) {
-		// Add items to food to use for healing. 
-		food.put("Lobster", "240"); 
-		food.put("Shark", "500"); 
-		food.put("Shrimp", "200"); 
 		// Create two players. 
-		Player Zach = new Player(1000, "Zach", 1000); 
-		Player Liz = new Player(1000, "Liz", 1000);
+		Player player1 = new Player(100, "Zach", 1000); 
+		Player player2 = new Player(100, "Liz", 1000);
 		// Variables to keep tract of who deals and receives damage. 
 		Player currPlayer = Zach; 
 		Player other = Liz; 
 		// While loop to create the textual interface of the game. 
-		while (loopCheck){
+		while (true){
 			System.out.println(currPlayer.getName() + " it is your turn."); 
-			Scanner scan = new Scanner(System.in); 
+			Scanner scan = new Scanner(System.in); // Scanner to read input. 
 			System.out.println("Choose a move by typing an option from the list below: (Type 0 to quit)"); 
 			System.out.println("Attack | Heal | Pass");
-			String choice = scan.next(); 
+			String choice = scan.next(); // Read the user's choice as a string value on the next line. 
 			if ("Attack".equals(choice) || "attack".equals(choice)){
-				dmg = generator.nextInt(currPlayer.getMaxDmg());
+				// Generate a random number to be applied as damage. 
+				dmg = generator.nextInt(currPlayer.getMaxDmg()) + 1; 
 				System.out.println("You dealt " + dmg +" damage to " + other.getName() ); 
-				other.dmgDealt(dmg); 
+				other.dmgDealt(dmg); // Apply the damage. 
 				System.out.println("Your current health is: " + currPlayer.getHealth()); 
 				System.out.println(other.getName() + "'s current health is: " + other.getHealth()); 
-				playCheck = true; 
+				turnCheck = true; // Allow switch to other player's turn. 
 			} else if ("Heal".equals(choice) || "heal".equals(choice)){
 				System.out.println("Choose what to heal with: (Type 0 to quit)"); 
-				System.out.println("Lobster | Shark | Shrimp"); 
-				Scanner foodScan = new Scanner(System.in); 
-				String foodChoice = foodScan.next(); 
+				// List of options to choose to heal with. Expandable. 
+				System.out.println("Lobster (200) | Shark (500) | Shrimp (100) | Back (To go back)"); 
+				Scanner foodScan = new Scanner(System.in); // New Scanner to read the user's choice. 
+				String foodChoice = foodScan.next(); // Read the next line as a string value. 
 				if ("0".equals(foodChoice)){
-					loopCheck = false; 
-				} else if (!food.containsKey(foodChoice)) {
-					System.out.println("That food is not available. Choose again."); 
-					playCheck = false; 
+					break;  // End the loop and game if 0 is the input. 
+				} else if ("Back".equals(foodChoice) || "back".equals(foodChoice)){ // Option to return to main menu. 
+					System.out.println("Taking you back to the main menu... "); 
+					turnCheck = false; // Go back to the main menu without switching turns. 
 				} else {
-					currPlayer.heal(foodChoice); 
-					System.out.println(currPlayer.getHealth()); 
-					playCheck = true; 
+					currPlayer.heal(foodChoice); // Heal the player based on choice. The heal method will check for invalid inputs. 
+					System.out.println("Your current health is: " + currPlayer.getHealth()); 
+					System.out.println(other.getName() + "'s current health is: " + other.getHealth()); 
+					turnCheck = true; // Allow for turn switch. 
 				}
 			} else if ("0".equals(choice)){
-				loopCheck = false; 
-			} else if ("Pass".equals(choice) || "pass".equals(choice)){
-				System.out.println("You choose to pass."); 
-			} else {
-				System.out.println("Invalid Command. Choose again."); 
-				playCheck = false;
+				break; // End the loop if 0 is chosen.  
+			} else if ("Pass".equals(choice) || "pass".equals(choice)){ // Option to pass if no action is desired.
+				System.out.println("You choose to pass. Switching turns..."); 
+			} else { // Covers any other case that is not a valid input. Except for an enter command. 
+				System.out.println("Invalid Command. Choose again..."); 
+				turnCheck = false; // Go back to main menu without switching turns. 
 			}
-			if (currPlayer.getHealth() < 0){
+			// Cases to determine if there is a win. 
+			if (currPlayer.getHealth() <= 0){
 				System.out.println("Congratulations! " + other.getName() + " wins!");
 				break;
-			} else if (other.getHealth() < 0){
+			} else if (other.getHealth() <= 0){
 				System.out.println("Congratulations! " + currPlayer.getName() + " wins!"); 
 				break; 
 			}
-			if (currPlayer.equals(Zach) && playCheck){
+			// Cases to switch turns only if turnCheck = true. 
+			if (currPlayer.equals(Zach) && turnCheck){
 			currPlayer = Liz; 
 			other = Zach; 
-			} else if(currPlayer.equals(Liz) && playCheck){
+			} else if(currPlayer.equals(Liz) && turnCheck){
 				currPlayer = Zach; 
 				other = Liz; 
 			}
 		}
-	}
-}
+	} // End main. 
+} // End class playGame. 

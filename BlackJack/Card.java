@@ -8,6 +8,7 @@
 import java.util.Random; 
 
 public class Card{
+	// Initialize variables. 
 	private String suit, name; 
 	private int value, rawCardValue; 
 	private Random generator = new Random(); 
@@ -18,42 +19,44 @@ public class Card{
 		this.value = setValue(rawCardValue % 13);
 		this.name = setName(rawCardValue % 13); 
 		this.suit = setSuit(value); 
-	}
+	} // End Constructor.
 	
 	// Method to get the name of the card. 
 	public String getName(){
 		return name; 
-	}
+	} // End getName.
 	
 	// Method to get the value of the card. 
 	public int getValue(){
 		return value; 
-	}
+	} // End getValue. 
 	
 	// Method to get the suit of the card. 
 	public String getSuit(){
 		return suit; 
-	}
+	} // End getSuit. 
 	
 	// Private Method for testing to get the rawCardValue. 
 	private int getRawCardValue(){
 		return rawCardValue; 
-	}
+	} // End getRawCardValue. 
 	
-	// Private method for getting the correct value of a card. Expects modulus operation to have been applied.  
+	// Private method for getting the correct value of a card. EXPECTS modulus operation to have been applied.  
 	private int setValue(int rv){ 
+		// If the raw value % 13 of the card is 0 or above 10, it has a value of 10. 
 		if (rv >= 10 || rv == 0){
 			return 10;
-		} else if ( rv == 1 ){
-			return 11; 
-		} else {
+		} else if ( rv == 1 ){ // This is the Ace, value of 11. 
+			return 11;  
+		} else { // All other cards have the value of their number. 
 			return rv; 
 		}
-	}
+	} // End setValue. 
 	
 	// Private method that determines the Name of the card. 
 	private String setName(int v){
-		// Gives the name of the card based on its number after having the modulus operation applied. 
+		// EXPECTS v to have already had the modulus operation applied. 
+		// Gives the name of the card based on its number.
 		// Special cases for Jack, Queen, King, Ace. 
 		if (v == 1){
 			return "Ace";

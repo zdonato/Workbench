@@ -73,7 +73,7 @@ public class Card{
 	
 	// Private method that determines the Suit of the card. 
 	private String setSuit(int v){
-		// EXPECTS v to have alredy had the modulus operation applied. 
+		// EXPECTS v to have already had the modulus operation applied. 
 		// Determines the suit based on the number of the card. 
 		if (v <= 13){
 			return "Hearts";

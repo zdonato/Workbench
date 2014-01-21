@@ -18,7 +18,7 @@ public class Card{
 		this.rawCardValue = generator.nextInt(53); 
 		this.value = setValue(rawCardValue % 13);
 		this.name = setName(rawCardValue % 13); 
-		this.suit = setSuit(value); 
+		this.suit = setSuit(rawCardValue); 
 	} // End Constructor.
 	
 	// Method to get the name of the card. 
@@ -73,7 +73,7 @@ public class Card{
 	
 	// Private method that determines the Suit of the card. 
 	private String setSuit(int v){
-		// EXPECTS v to have already had the modulus operation applied. 
+		// Expects inputted v to be the rawCardValue.
 		// Determines the suit based on the number of the card. 
 		if (v <= 13){
 			return "Hearts";

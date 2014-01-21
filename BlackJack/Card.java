@@ -42,14 +42,14 @@ public class Card{
 	} // End getRawCardValue. 
 	
 	// Private method for getting the correct value of a card. EXPECTS modulus operation to have been applied.  
-	private int setValue(int rv){ 
-		// If the raw value % 13 of the card is 0 or above 10, it has a value of 10. 
-		if (rv >= 10 || rv == 0){
+	private int setValue(int v){ 
+		// If the value % 13 of the card is 0 or above 10, it has a value of 10. 
+		if (v >= 10 || v == 0){
 			return 10;
-		} else if ( rv == 1 ){ // This is the Ace, value of 11. 
+		} else if ( v == 1 ){ // This is the Ace, value of 11. 
 			return 11;  
 		} else { // All other cards have the value of their number. 
-			return rv; 
+			return v; 
 		}
 	} // End setValue. 
 	
@@ -73,6 +73,7 @@ public class Card{
 	
 	// Private method that determines the Suit of the card. 
 	private String setSuit(int v){
+		// EXPECTS v to have alredy had the modulus operation applied. 
 		// Determines the suit based on the number of the card. 
 		if (v <= 13){
 			return "Hearts";

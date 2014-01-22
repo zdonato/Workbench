@@ -15,7 +15,7 @@ public class Card{
 	
 	// Constructor. 
 	public Card(){
-		this.rawCardValue = generator.nextInt(53); 
+		this.rawCardValue = generator.nextInt(52) + 1; 
 		this.value = setValue(rawCardValue % 13);
 		this.name = setName(rawCardValue % 13); 
 		this.suit = setSuit(rawCardValue); 

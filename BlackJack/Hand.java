@@ -48,6 +48,7 @@ public class Hand{
 	
 	// Method to calculate the score of the hand. 
 	private byte setScore(){ 
+		hs = 0; 
 		for (Card c : hand){
 			hs += c.getValue(); 
 		}

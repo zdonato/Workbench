@@ -15,10 +15,10 @@ public class Card{
 	
 	// Constructor. 
 	public Card(){
-		this.rawCardValue = generator.nextInt(52) + 1; 
-		this.value = setValue(rawCardValue % 13);
-		this.name = setName(rawCardValue % 13); 
-		this.suit = setSuit(rawCardValue); 
+		rawCardValue = generator.nextInt(52) + 1; 
+		value = setValue(rawCardValue % 13);
+		name = setName(rawCardValue % 13); 
+		suit = setSuit(rawCardValue); 
 	} // End Constructor.
 	
 	// Method to get the name of the card. 
@@ -44,7 +44,7 @@ public class Card{
 	// Private method for getting the correct value of a card. EXPECTS modulus operation to have been applied.  
 	private int setValue(int v){ 
 		// If the value % 13 of the card is 0 or above 10, it has a value of 10. 
-		if (v >= 10 || v == 0){
+		if (v == 0 || v >= 11){
 			return 10;
 		} else if ( v == 1 ){ // This is the Ace, value of 11. 
 			return 11;  

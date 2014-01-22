@@ -28,6 +28,11 @@ public class Hand{
 		handScore = setScore(); 
 	} // End addCard. 
 	
+	// Method to get each individual card in the hand and its value. 
+	public int getValueOfCard(int index){
+		return hand.get(index).getValue();  
+	} // End getValueOfCard. 
+	
 	// Method to display the hand. 
 	public void displayHand(){
 		for (Card c : hand){

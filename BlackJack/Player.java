@@ -45,7 +45,7 @@ public class Player{
 				String move = scan.next(); 
 				if ("hit".equals(move) || "Hit".equals(move) || "h".equals(move)){
 					Card newCard = new Card(); 
-					System.out.println("You're dealt a " + newCard.getValue() + " of " + newCard.getSuit());
+					System.out.println("You're dealt a " + newCard.getName() + " of " + newCard.getSuit());
 					System.out.println(); 
 					playerHand.addCard(newCard); 
 				} else if ("stay".equals(move) || "Stay".equals(move) || "s".equals(move)){

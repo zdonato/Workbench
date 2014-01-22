@@ -23,11 +23,15 @@ public class Hand{
 	} // End Constructor. 
 	
 	// Method to add a card to the hand. Will also update the handScore.
-	public void addCard(){
-		Card newCard = new Card(); 
-		hand.add(newCard); 
+	public void addCard(Card nc){
+		hand.add(nc); 
 		handScore = setScore(); 
 	} // End addCard. 
+	
+	// Method to get each individual card in the hand and its value. 
+	public int getValueOfCard(int index){
+		return hand.get(index).getValue();  
+	} // End getValueOfCard. 
 	
 	// Method to display the hand. 
 	public void displayHand(){
@@ -46,6 +50,10 @@ public class Hand{
 		return handScore; 
 	} // End getHandScore. 
 	
+	public int getHandSize(){
+		return hand.size(); 
+	}
+	
 	// Method to calculate the score of the hand. 
 	private byte setScore(){ 
 		hs = 0; 
@@ -59,7 +67,7 @@ public class Hand{
 		Hand hand1 = new Hand(); 
 		hand1.displayHand(); 
 		System.out.println("Score: " + hand1.getHandScore()); 
-		hand1.addCard(); 
+		hand1.addCard(new Card()); 
 		hand1.displayHand(); 
 		System.out.println("Score: " + hand1.getHandScore()); 
 	}

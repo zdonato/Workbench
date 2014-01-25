@@ -1,15 +1,16 @@
-// Developer: Zachary Donato 
-// Date Created: 1.21.13
-// Revisions: 
-//     Date				Reason
-//   
-// 
+/**
+ * 	Player class to play the BlackJack game. 
+ * 	@author Zachary Donato 
+ *  Date: 1.24.13
+ *  Revisions: 
+ *  
+*/
 
 import java.util.Scanner; 
 
 public class Player{
 	// Initialize variables. 
-	private Hand playerHand; 
+	protected Hand playerHand; 
 	private String name; 
 	
 	// Constructor.
@@ -18,17 +19,26 @@ public class Player{
 		this.name = n; 
 	} // End Constructor. 
 	
-	// Method to get the cards in the hand. 
+	/** 
+	 * Displays the cards in each hand by calling the displayHand method in the Hand class. 
+	 */
 	public void getHand(){
 		playerHand.displayHand(); 
-	} // End getHand. 
+	}
 	
-	// Method to get the name of the Player. 
+	/**
+	 * Returns the name of the player. 
+	 * @return The name of the player. 
+	 */
 	public String getNameOfPlayer(){
 		return name; 
-	} // End getNameofPlayer. 
+	} 
 	
-	// Method hitOrStay. While loop execute until card count > 5, busted = true, or Player decides to stay. 
+	/** 
+	 * Function to ask the user if they want to hit (add a new card) or stay (end the hand with their current score.) While loop executes
+	 * as long as the size of the hand is less than 5, the maximum amount of cards allowed. Immediately prints out BlackJack if the player
+	 * has BlackJack. 
+	 */
 	public void hitOrStay(){
 		// Check if the player has Blackjack on the first time through. If not, proceed to the while loop for hitting or staying. 
 		if (hasBlackJack()){
@@ -50,6 +60,9 @@ public class Player{
 					playerHand.addCard(newCard); 
 				} else if ("stay".equals(move) || "Stay".equals(move) || "s".equals(move)){
 					System.out.println("You chose to stay. Your final score is: " + playerHand.getHandScore()); 
+					System.out.println(); 
+					break; 
+				} else if ("0".equals(move)){
 					break; 
 				} else { 
 					System.out.println("Invalid command. Choose again.");
@@ -57,31 +70,36 @@ public class Player{
 				
 				if (hasBusted()){
 					System.out.println("Sorry you busted. Your score was " + playerHand.getHandScore() +"."); 
+					System.out.println(); 
 					break; 
 				}
 			} // End while. 
 		} // End else. 
 	} // End hitOrStay. 
 	
-	// Private method to check if the player has blackJack. Only applies to the initial hand. 
-	private boolean hasBlackJack(){
-		if (playerHand.getValueOfCard(0) == 10 && playerHand.getValueOfCard(1) == 11){
-			return true; 
-		} else if (playerHand.getValueOfCard(0) == 11 && playerHand.getValueOfCard(1) == 10){
+	/**
+	 * Method to check if the player has BlackJack. Only applies to the first two cards dealt. 
+	 * @return True if the player has BlackJack, false otherwise. 
+	 */ 
+	protected boolean hasBlackJack(){
+		if ((playerHand.getValueOfCard(0) == 10 && playerHand.getValueOfCard(1) == 11) || (playerHand.getValueOfCard(0) == 11 && playerHand.getValueOfCard(1) == 10)){
 			return true; 
 		} else {
 			return false; 
 		}
-	} // End hasBlackJack.
+	} 
 	
-	// Private method to check if the hand score is over 21.
-	private boolean hasBusted(){
+	/**
+	 * Checks if the player has busted (their score is over 21). 
+	 * @return True if the player has busted; false otherwise. 
+	 */
+	protected boolean hasBusted(){
 		if (playerHand.getHandScore() > 21){
 			return true; 
 		} else {
 			return false; 
 		}
-	} // End hasBusted. 
+	} 
 	
 	public static void main(String[] args){
 		Player zach = new Player("Zach"); 

@@ -1,8 +1,10 @@
-// Developer: Zachary Donato 
-// Date Created: 1.21.14
-// Revisions: 
-//      Date              Reason
-// 
+/**
+ *  Hand for the Player in the BlackJack game. 
+ *  @author Zachary Donato
+ *  Date: 1.24.13
+ *  Revisions: 
+ *
+*/
 
 import java.util.ArrayList;
 
@@ -22,18 +24,27 @@ public class Hand{
 		handScore = setScore(); 
 	} // End Constructor. 
 	
-	// Method to add a card to the hand. Will also update the handScore.
+	/**
+	 * Method for adding a card to the hand ArrayList. Updates the handScore as well. 
+	 * @param nc The new Card to be added. 
+	 */
 	public void addCard(Card nc){
 		hand.add(nc); 
 		handScore = setScore(); 
-	} // End addCard. 
+	} 
 	
-	// Method to get each individual card in the hand and its value. 
+	/** 
+	 * Returns the value of the card at the given index. 
+	 * @param index The index of the desired card. 
+	 * @return The value of the card at index index. 
+	 */
 	public int getValueOfCard(int index){
 		return hand.get(index).getValue();  
-	} // End getValueOfCard. 
+	} 
 	
-	// Method to display the hand. 
+	/**
+	 * Displays all the cards in the hand with their name and suit. 
+	 */
 	public void displayHand(){
 		for (Card c : hand){
 			if (hand.indexOf(c) == (hand.size()-1)){
@@ -43,25 +54,35 @@ public class Hand{
 			}
 		}
 		System.out.println(); 
-	} // End displayHand. 
+	} 
 	
-	// Method to print the value of the hand. 
-	public byte getHandScore(){
+	/**
+	 * Returns the score of the hand. 
+	 * @return The score of the hand. 
+	 */
+	public int getHandScore(){
 		return handScore; 
-	} // End getHandScore. 
+	}
 	
+	/**
+	 * Returns the size of the hand. 
+	 * @return The size of hand. 
+	 */
 	public int getHandSize(){
 		return hand.size(); 
 	}
 	
-	// Method to calculate the score of the hand. 
+	/**
+	 * Determines the score of the hand by adding all the values of the cards. 
+	 * @return The score of the hand. 
+	 */
 	private byte setScore(){ 
 		hs = 0; 
 		for (Card c : hand){
 			hs += c.getValue(); 
 		}
 		return hs; 
-	} // End setScore. 
+	} 
 	
 	public static void main(String[] args){
 		Hand hand1 = new Hand(); 

@@ -1,9 +1,10 @@
-// Developer: Zachary Donato 
-// Date Created: 1.21.13
-// Revisions: 
-//     Date				Reason
-//   
-// 
+/** 
+ * 	Card for the cards of the Hand in the BlackJack game. 
+ *  @author Zachary Donato 
+ *  Date: 1.24.14
+ *  Revisions: 
+ * 
+*/
 
 import java.util.Random; 
 
@@ -21,27 +22,43 @@ public class Card{
 		suit = setSuit(rawCardValue); 
 	} // End Constructor.
 	
-	// Method to get the name of the card. 
+	/**
+	 * Returns the name of the card. 
+	 * @return The name of the Card. 
+	 */
 	public String getName(){
 		return name; 
-	} // End getName.
+	} 
 	
-	// Method to get the value of the card. 
+	/** 
+	 * Returns the value of the card. 
+	 * @return The value of the card.
+	 */ 
 	public int getValue(){
 		return value; 
-	} // End getValue. 
+	} 
 	
-	// Method to get the suit of the card. 
+	/**
+	 * Returns the suit of the card. 
+	 * @return The suit of the card. 
+	 */
 	public String getSuit(){
 		return suit; 
-	} // End getSuit. 
+	} 
 	
-	// Private Method for testing to get the rawCardValue. 
+	/** 
+	 * Method for testing purposes. 
+	 * @return The raw value of the card before the modulus operation. 
+	 */
 	private int getRawCardValue(){
 		return rawCardValue; 
-	} // End getRawCardValue. 
+	} 
 	
-	// Private method for getting the correct value of a card. EXPECTS modulus operation to have been applied.  
+	/**
+	 * Determines the value of the card. 
+	 * @param v The value of the card AFTER the modulus operation. 
+	 * @return The value of the card based on the modulus operation. 
+	 */ 
 	private int setValue(int v){ 
 		// If the value % 13 of the card is 0 or above 10, it has a value of 10. 
 		if (v == 0 || v >= 11){
@@ -51,9 +68,13 @@ public class Card{
 		} else { // All other cards have the value of their number. 
 			return v; 
 		}
-	} // End setValue. 
+	}
 	
-	// Private method that determines the Name of the card. 
+	/**
+	 * Determines the name of the card. 
+	 * @param v The value of the card AFTER the modulus operation. 
+	 * @return The name of the card. 
+	 */
 	private String setName(int v){
 		// EXPECTS v to have already had the modulus operation applied. 
 		// Gives the name of the card based on its number.
@@ -69,9 +90,13 @@ public class Card{
 		} else {
 			return String.valueOf(v); 
 		}
-	} // End setNameOf. 
+	} 
 	
-	// Private method that determines the Suit of the card. 
+	/**
+	 * Determines the suit of the card. 
+	 * @param v The raw value of the card. 
+	 * @return The suit of the card, based on its raw value. 
+	 */
 	private String setSuit(int v){
 		// Expects inputted v to be the rawCardValue.
 		// Determines the suit based on the number of the card. 
@@ -84,8 +109,8 @@ public class Card{
 		} else { 
 			return "Clubs"; 
 		}
-	} // End setSuitOf. 
-	
+	} 
+
 	public static void main(String[] args){
 		Card card1 = new Card(); 
 		System.out.println(card1.getRawCardValue()); 

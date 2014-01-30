@@ -2,6 +2,7 @@ package com.Zach.rain;
 
 import java.awt.Canvas;
 import java.awt.Dimension; 
+import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
 import javax.swing.JFrame;
@@ -54,6 +55,10 @@ public class Game extends Canvas implements Runnable{
 			createBufferStrategy(3); 
 			return; 
 		}
+		
+		Graphics g = bs.getDrawGraphics(); 
+		
+		g.dispose();
 	}
 	
 	public static void main(String[] args){ 

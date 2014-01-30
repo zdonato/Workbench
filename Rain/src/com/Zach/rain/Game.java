@@ -1,10 +1,8 @@
 package com.Zach.rain;
 
 import java.awt.Canvas;
-import java.awt.Color;
 import java.awt.Dimension; 
 import javax.swing.JFrame;
-
 
 public class Game extends Canvas implements Runnable{
 	private static final long serialVersionUID = 1L; 

@@ -25,41 +25,35 @@ public class Calculator{
 	 * @param c Double c, the constant of the function.
 	 * @return Returns true if the root was found, false otherwise.
 	 */
-	public boolean getRoots(double a, double b, double c){
+	public String getRoots(double a, double b, double c){
 		// Calculate discriminant.
 		disc = (b * b) - (4 * a * c);
 		
 		// Negative discriminant means imaginary roots.
 		if (disc < 0){
-			System.out.println("No real roots."); 
-			return false; 
+			return "No real roots.";
 		}
 		
 		// If the quadratic term is missing, return only one root.
 		if (a == 0){
 			root1 = -(c/b); 
-			System.out.println("The root of " + a + "x^2 + " + b + "x + " + c + " is: " + root1); 
-			return true;
+			return Double.toString(root1); 
 		} else {
-			root1 = (-b + disc)/(2 * a); 
-			root2 = (-b - disc)/(2 * a); 
+			root1 = (-b + Math.sqrt(disc))/(2 * a); 
+			root2 = (-b - Math.sqrt(disc))/(2 * a); 
 			
 			// Check if the roots are the same.
-			if (root1 == root2){
-				System.out.println("The root of " + a + "x^2 + " + b + "x + " + c + " is: " + root1);
-			} else {
-				System.out.println("The roots of " + a + "x^2 + " + b + "x + " + c + " are: ");
-				System.out.println(" ROOT1: " + root1); 
-				System.out.println(" ROOT2: " + root2); 
-			}
-		
-			return true; 
-		} // End else. 
+			if (root1 == root2)
+				return Double.toString(root1); 
+			
+			// If not return both roots.
+			return Double.toString(root1) + ", " + Double.toString(root2); 
+			} // End else. 
 	} // End getRoots. 
 	
 	public static void main(String[] args){
 		Calculator calc = new Calculator(); 
 		
-		calc.getRoots(1, 2, 1);
+		System.out.println(calc.getRoots(1, 4, -5));
 	}
 }

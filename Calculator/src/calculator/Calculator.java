@@ -51,9 +51,32 @@ public class Calculator{
 			} // End else. 
 	} // End getRoots. 
 	
+	/** 
+	 * Method add to add numbers.
+	 * @param numbers Double numbers, a list of numbers for an arbitrary number of inputs.
+	 * @return The sum of the doubles in numbers.
+	 */
+	public double add(Double... numbers){
+		// Initialize variables.
+		int i = 0;
+		double sum = 0; 
+		
+		// Add of the number inputs.
+		while (i < numbers.length){
+			sum += numbers[i]; 
+			i++;
+		}
+		
+		// Return the sum.
+		return sum; 
+	}
+	
+	
+	
 	public static void main(String[] args){
 		Calculator calc = new Calculator(); 
 		
 		System.out.println(calc.getRoots(1, 4, -5));
+		System.out.println(calc.add(1.0, 5.0, 6.0, 7.0)); 
 	}
 }

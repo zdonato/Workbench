@@ -22,23 +22,22 @@ public class Window extends JFrame{
 	
 	// Set up the constructor for the window. 
 	public Window(){
+		root1 = new JLabel(""); 
+		root2 = new JLabel(""); 
+		submit = new JButton("Submit"); 
 		setLayout(new FlowLayout()); 
 		
 		// Add text fields for the coefficients.
-		a = new JTextField("a", 15); 
-		b = new JTextField("b", 15); 
-		c = new JTextField("c", 15); 
+		a = new JTextField("a", 10); 
+		b = new JTextField("b", 10); 
+		c = new JTextField("c", 10); 
 		add(a); 
 		add(b); 
 		add(c);
-		
 		// Add the submit button.
-		submit = new JButton("Submit");
 		add(submit); 
 		
 		// Add the labels for roots but keep them empty for now. 
-		root1 = new JLabel(""); 
-		root2 = new JLabel(""); 
 		add(root1); 
 		add(root2);
 		
@@ -48,20 +47,46 @@ public class Window extends JFrame{
 	}
 	
 	public class Event implements ActionListener {
+		// Initialize variables. 
+		String r1, r2; 
 		
 		// Calculate the roots when submit is pressed.
 		public void actionPerformed(ActionEvent e){
-			root1.setText(calc.getRoot1(Double.parseDouble(a.getText()), Double.parseDouble(a.getText()), Double.parseDouble(a.getText())));
-		}
-		
-	}
+			// Set the roots to empty from any previous submissions. 
+			root1.setText(""); 
+			root2.setText(""); 
+			
+			try {
+				// Calculate root1.
+				r1 = calc.getRoot1(Double.parseDouble(a.getText()), Double.parseDouble(b.getText()), Double.parseDouble(c.getText())); 
+				// Calculate root2.
+				r2 = calc.getRoot2(Double.parseDouble(a.getText()), Double.parseDouble(b.getText()), Double.parseDouble(c.getText())); 
+			} catch (Exception e1){
+				root1.setText("Enter a valid number."); 
+			}
+			
+			try { 
+				// If the roots exist, check for equality.
+				if (r1.equals(r2)){
+					root1.setText("One root: " + r1);
+				} else {
+					root1.setText("Root 1: " + r1.substring(0,7));
+					root2.setText("Root 2: " + r2.substring(0,7)); 
+				}
+			} catch (NullPointerException n){
+				
+			}
+			
+			
+		} // End actionPerformed.
+	} // End Event class.
 
 	
 	public static void main(String args[]){
 		Window window = new Window(); 
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setVisible(true);
-		window.setSize(300, 300); 
+		window.setSize(140, 300); 
 		window.setTitle("Quadratic Root Finder"); 
 	}
 	

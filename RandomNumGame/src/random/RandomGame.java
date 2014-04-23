@@ -35,7 +35,7 @@ public class RandomGame extends JFrame{
 		g.fill = GridBagConstraints.HORIZONTAL; 
 		g.gridx = 0; 
 		g.gridy = 0;
-		add(g, title); 
+		add(title, g); 
 		
 		guessLabel = new JLabel("Guess: ");
 		guess = new JTextField(10); 

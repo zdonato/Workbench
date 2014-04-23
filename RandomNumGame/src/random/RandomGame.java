@@ -31,11 +31,26 @@ public class RandomGame extends JFrame{
 		getContentPane().setBackground(Color.gray);
 		
 		// Set up the JLabels, textfield, and button.
-		JLabel title = new JLabel("Welcome to the Random Number Game!"); 
+		title = new JLabel("Welcome to the Random Number Game!"); 
+		g.fill = GridBagConstraints.HORIZONTAL; 
+		g.gridx = 0; 
+		g.gridy = 0;
+		add(g, title); 
 		
+		guessLabel = new JLabel("Guess: ");
+		guess = new JTextField(10); 
+		result = new JLabel(""); 
+		randomNum = new JLabel("");
 		
 		
 	}
 	
-	
+	public static void main(String[] args){
+		RandomGame window = new RandomGame(); 
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.setVisible(true);
+		window.setSize(500, 300); 
+		window.setTitle("Random Number Game!");
+		
+	}
 }

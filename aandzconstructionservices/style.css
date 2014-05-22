@@ -1,22 +1,31 @@
+* {
+    font-family: "Helvetica"; 
+}
+
 body {
-    background-color: black;
+    background-color: gray;
+    max-width: 900px;
+    position: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 header{
-    max-width: 800px; 
+    width: 900px; 
     position: center;
     margin: auto;
 }
 
 img {
-    max-width: 800px;
+    max-width: 900px;
 }
 
 nav{
+    max-width: 600px; 
 	font-weight: bold;
 	position: relative;
-    left: -42px;
-	top: -50px;
+    left: -40px;
+	top: -50px; 
 }
 
 nav ul li {
@@ -24,25 +33,76 @@ nav ul li {
     display: inline;
 	text-decoration: none;
 	text-transform: uppercase;
-	padding: 10px;
-	border: 2px solid red;
-	border-radius: 3px;
+	padding: 5px;
 }
 
 nav ul li a{
     color: red;
 }
 
-nav ul li:hover { 
-    background-color: red; 
-    text-decoration: none; 
-}
-
 nav ul li:hover a {
-    text-decoration: none; 
-    color: white; 
+    color: rgb(200,0,0);  
+    font-style: italic;
 }
 
 a {
     text-decoration: none; 
+}
+
+section img {
+    max-width: 500px;
+    max-height: 500px;
+}
+
+#slideshow {
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    top: 200px; 
+    border: 2px solid black; 
+    background-color: white;
+}
+
+#welcome {
+    background-color: white;
+    border: 2px solid black;
+    width: 390px;
+    height: 530px; 
+    position: relative;
+    left: 507px;
+    top: -42px;
+}
+
+.welcomebot {
+    width: 380px; 
+    height: 250px;
+}
+
+article {
+    column-count: 1; 
+    text-align: center;  
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+article a {
+    color: red;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+article a:hover{
+    color: rgb(200,0,0);
+    font-style: italic;
+}
+
+#contact{
+    position: absolute;
+    max-width: 500px; 
+    max-height: 220px; 
+    width: 500px; 
+    height: 220px;
+    top: 510px; 
+    border: 2px solid black;
+    background-color: white;
 }

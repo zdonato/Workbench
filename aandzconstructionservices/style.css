@@ -8,32 +8,33 @@ header{
     margin: auto;
 }
 
+img {
+    max-width: 800px;
+}
+
 nav{
 	font-weight: bold;
 	position: relative;
-    align-content: center;
-    left: -40px;
+    left: -42px;
 	top: -50px;
-    display: inline; 
 }
 
 nav ul li {
 	background-color: white;
-	display: inline;
+    display: inline;
 	text-decoration: none;
 	text-transform: uppercase;
 	padding: 10px;
-	border: 2px solid black;
+	border: 2px solid red;
 	border-radius: 3px;
 }
 
 nav ul li a{
-    color: black;
+    color: red;
 }
 
-
 nav ul li:hover { 
-    background-color: black; 
+    background-color: red; 
     text-decoration: none; 
 }
 
@@ -44,19 +45,4 @@ nav ul li:hover a {
 
 a {
     text-decoration: none; 
-}
-
-#welcome {
-    position: absolute;
-    max-width: 540px;
-    background-color: white;
-    border: 2px ridge black;
-    border-radius: 5px; 
-    left: 700px; 
-    color: black;
-}   
-
-@media screen and (min-width: 851px)
-{
-    //This is the normal screen
 }

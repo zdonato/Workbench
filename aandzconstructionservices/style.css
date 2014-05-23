@@ -4,7 +4,7 @@
 
 body {
     background-color: gray;
-    max-width: 900px;
+    width: 900px;
     position: center;
     margin-left: auto;
     margin-right: auto;
@@ -16,7 +16,7 @@ header{
     margin: auto;
 }
 
-img {
+header img {
     max-width: 900px;
 }
 
@@ -109,15 +109,16 @@ article a:hover{
 
 footer {
     position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    width: 300px;
-    max-width: 300px;
-    left: 600px;
+    margin: auto;
+    width: 900px;
+    text-align: center;
+    top: 750px;
 }
 
-footer p {
-    text-align: center;
+footer a {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 footer img {
@@ -125,7 +126,4 @@ footer img {
     height: 30px; 
     border: 5px inset white; 
     border-radius: 5px; 
-    position: absolute;
-    left: 130px;
-    top: -30px;
 }

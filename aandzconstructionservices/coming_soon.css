@@ -1,0 +1,62 @@
+* {
+    font-family: "Helvetica";
+}
+
+html {
+    width: 1000px;
+    margin: auto;
+}
+
+body {
+    background-color:gray;
+}
+
+section {
+    width: 600px;
+    background-color: white;
+    margin: auto;
+    margin-top: 10px; 
+    border: 2px solid black;
+    border-radius: 10px; 
+}
+
+.uc {
+    width: 500px;
+    margin: auto;  
+    position: relative;
+    left: 50px; 
+}
+
+h1 {
+    text-align: center;  
+}
+
+p {
+    font-size: 20px;
+    max-width: 1000px; 
+    width: 500px;
+    position: relative;
+    text-align: center;
+    margin: auto; 
+}
+
+footer {
+    position: relative;
+    margin: auto;
+    width: 500px; 
+    text-align: center;
+    padding: 10px; 
+}
+
+footer a {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer img {
+    width: 30px;
+    height: 30px; 
+    border: 5px solid black; 
+    border-radius: 5px; 
+}

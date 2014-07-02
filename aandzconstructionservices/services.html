@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title> A &amp; Z Construction </title>
         <link rel="stylesheet" href="style.css"/>
-        <script type="text/javascript" src="slideshow.js"></script>
+        <script type="text/javascript" src="script.js"></script>
     </head>
     
     <body>
@@ -23,12 +23,49 @@
         
         <nav id="services-nav">
             <ul> 
-                <li> <a> Residential </a> </li>
-                <li> <a> Commercial </a> </li>
-                <li> <a> Supervision </a> </li>
+                <li> <a onclick="swap('res')" href="javascript:void(0)"> Residential </a> </li>
+                <li> <a onclick="swap('com')" href="javascript:void(0)"> Commercial </a> </li>
+                <li> <a onclick="swap('sup')" href="javascript:void(0)"> Supervision </a> </li>
             </ul>
         </nav>
         
+        <section id="serv" class="show"> 
+            <article> A and Z Construction offers a wide variety of services to fit everyone's needs! <br> <br> Click one of the buttons to the left to see a list of the services that we perform for residential, commercial, and supervision projects. </article>
+        </section>
+        
+        <section id="res" class="hide">
+            <p> 
+                <ul> 
+                    <li> RES </li>
+                    <li> RES </li>
+                    <li> RES </li>
+                    <li> RES </li>
+                </ul>
+            </p>
+        </section>
+    
+        <section id="com" class="hide">
+            <p> 
+                <ul> 
+                    <li> COM </li>
+                    <li> COM </li>
+                    <li> COM </li>
+                    <li> COM </li>
+                </ul>
+            </p>
+        </section>
+
+        <section id="sup" class="hide">
+            <p> 
+                <ul> 
+                    <li> SUP </li>
+                    <li> SUP </li>
+                    <li> SUP </li>
+                    <li> SUP </li>
+                </ul>
+            </p>
+        </section>
+         
         <footer>
             <a href="https://www.facebook.com/AandZConstruction"> <img src="facebook-icon.png" alt="Aperture Facebook Site" width=30px height=30px> </a>
             <p> 

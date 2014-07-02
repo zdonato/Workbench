@@ -5,6 +5,7 @@
 body {
     background-color: gray;
     width: 900px;
+    max-width: 900px; 
     position: center;
     margin-left: auto;
     margin-right: auto;
@@ -20,7 +21,25 @@ header img {
     max-width: 900px;
 }
 
-nav{
+#services-nav ul {
+    text-decoration: none; 
+    list-style: none; 
+    position: relative; 
+    left: -56px;
+    width: 120px;
+    text-align: center;
+}
+
+#services-nav ul li {
+    border: solid black 2px; 
+    border-radius: 5px;  
+    width: 95px; 
+    color: rgb(200,0,0); 
+    margin: 15px; 
+    background-color: white; 
+}
+
+#main {
     max-width: 600px; 
 	font-weight: bold;
 	position: relative;
@@ -28,7 +47,7 @@ nav{
 	top: -50px; 
 }
 
-nav ul li {
+#main ul li {
 	background-color: white;
     display: inline;
 	text-decoration: none;
@@ -36,13 +55,12 @@ nav ul li {
 	padding: 5px;
 }
 
-nav ul li a{
-    color: red;
+#main ul li a{
+    color: rgb(210,0,0);
 }
 
-nav ul li:hover a {
-    color: rgb(200,0,0);  
-    font-style: italic;
+#main ul li:hover a {
+    color: grey;
 }
 
 a {

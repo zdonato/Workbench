@@ -11,6 +11,18 @@ body {
     background-color:gray;
 }
 
+header a {
+    text-decoration: none; 
+    position: relative;
+    top: -30px;
+    left: 10px; 
+    color: red; 
+}
+
+header a:hover {
+    color: rgb(200,0,0);
+}
+
 section {
     width: 600px;
     background-color: white;

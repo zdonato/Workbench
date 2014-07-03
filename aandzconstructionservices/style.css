@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: gray;
+    background-color: rgb(220,200,100);
     width: 900px;
     max-width: 900px; 
     position: center;
@@ -19,53 +19,61 @@ header{
 
 header img {
     max-width: 900px;
+    border: solid black 2px; 
+}
+
+#content { 
+    width: 900px;
+    height: 500px; 
+    position: relative; 
+    top: -40px; 
+
 }
 
 #services-nav ul {
     text-decoration: none; 
     list-style: none; 
-    position: relative;
+    position: absolute;
     margin: 0px;  
-    padding: 0px;
-    top: -30px; 
+    padding: 0px; 
     left: -1px; 
 }
 
 #services-nav ul li {
-    border: solid black 2px; 
-    border-radius: 5px;  
+    border: solid rgb(0,100,110) 5px; 
+    border-radius: 20px; 
+    background-color: rgb(200,200,50);
     width: 150px;
     height: 40px;  
     margin-bottom: 10px; 
-    background-color: white; 
     text-align: center;
     font-size: 20px; 
     padding-top: 15px;
+    position: relative; 
+    left: 10px; 
+    top: 10px; 
 }
 
 #services-nav ul li a {
     margin: 0px;
     text-align: center; 
-    color: rgb(200,0,0); 
+    color: rgb(0,100,110); 
 }
 
 #services-nav ul li a:hover {
-    color: gray; 
+    color: white;
 }
 
 .hide {
     display: none; 
 }
 
-.show {
-    border: 2px solid black; 
-    border-radius: 5px; 
-    background-color: white; 
-    position: relative; 
+.show {  
+    position: absolute; 
     width: 700px; 
     height: 400px; 
-    top: -237px; 
     left: 197px;  
+    top: 10px; 
     margin: right; 
 }
 
@@ -81,7 +89,7 @@ header img {
     max-width: 600px; 
 	font-weight: bold;
 	position: relative;
-    left: -40px;
+    left: -36px;
 	top: -50px; 
 }
 
@@ -126,7 +134,7 @@ section img {
     height: 530px; 
     position: relative;
     left: 507px;
-    top: -42px;
+    top: -46px;
 }
 
 .welcomebot {
@@ -165,16 +173,20 @@ article a:hover{
 
 footer {
     position: absolute;
+    top: 750px;
     margin: auto;
     width: 900px;
     text-align: center;
-    top: 750px;
 }
 
 footer a {
     width: 900px;
     margin-left: auto;
     margin-right: auto;
+}
+
+footer a:hover {
+    text-decoration: underline; 
 }
 
 footer img {

@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: rgb(220,200,100);
+    background-color: rgb(170,200,200);
     width: 900px;
     max-width: 900px; 
     position: center;
@@ -19,7 +19,7 @@ header{
 
 header img {
     max-width: 900px;
-    border: solid black 2px; 
+    border: solid rgb(10,80,100) 2px; 
 }
 
 #content { 
@@ -27,7 +27,6 @@ header img {
     height: 500px; 
     position: relative; 
     top: -40px; 
-
 }
 
 #services-nav ul {
@@ -40,9 +39,9 @@ header img {
 }
 
 #services-nav ul li {
-    border: solid rgb(0,100,110) 5px; 
+    border: solid rgb(10,80,200) 2px; 
     border-radius: 20px; 
-    background-color: rgb(200,200,50);
+    background-color: rgb(10,80,100);
     width: 150px;
     height: 40px;  
     margin-bottom: 10px; 
@@ -57,11 +56,15 @@ header img {
 #services-nav ul li a {
     margin: 0px;
     text-align: center; 
-    color: rgb(0,100,110); 
+    color: white; 
 }
 
-#services-nav ul li a:hover {
-    color: white;
+#services-nav ul li:hover {
+    background-color: white;
+}
+
+#services-nav ul li:hover a { 
+    color: rgb(10,80,100);   
 }
 
 .hide {
@@ -102,11 +105,12 @@ header img {
 }
 
 #main ul li a{
-    color: rgb(210,0,0);
+    color: rgb(10,80,100);
 }
 
-#main ul li:hover a {
-    color: grey;
+#main ul li a:hover {
+    color: rgb(170,200,200);
+    text-decoration: underline; 
 }
 
 a {
@@ -150,14 +154,13 @@ article {
 }
 
 article a {
-    color: red;
+    color: rgb(10,80,100);
     text-decoration: none;
     font-size: 20px;
 }
 
 article a:hover{
-    color: rgb(200,0,0);
-    font-style: italic;
+    color: rgb(170,200,200);
 }
 
 #contact{
@@ -169,6 +172,13 @@ article a:hover{
     top: 510px; 
     border: 2px solid black;
     background-color: white;
+}
+
+.large {
+    position: relative; 
+    width: 500px; 
+    height: 400px; 
+    left: 200px; 
 }
 
 footer {

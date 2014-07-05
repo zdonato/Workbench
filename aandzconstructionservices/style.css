@@ -18,7 +18,7 @@ header{
 }
 
 header img {
-    max-width: 900px;
+    width: 900px;
     border: solid rgb(10,80,100) 2px; 
 }
 
@@ -39,8 +39,7 @@ header img {
 }
 
 #services-nav ul li {
-    border: solid rgb(10,80,200) 2px; 
-    border-radius: 20px; 
+    border: solid rgb(10,80,200) 2px;  
     background-color: rgb(10,80,100);
     width: 150px;
     height: 40px;  
@@ -192,6 +191,51 @@ article a:hover{
     width: 500px; 
     height: 400px; 
     left: 200px; 
+}
+
+.title {
+    position: relative; 
+    top: -40px; 
+    width: 900px; 
+    text-align: center;
+    font-weight: bold; 
+    font-size: 30px;
+    padding: 0px; 
+    margin: 0px; 
+    color: rgb(10,80,100);
+}
+
+.projects { 
+    width: 900px; 
+    text-align: center; 
+    padding: 0px; 
+    position: relative; 
+    top: -40px; 
+}
+
+.button {
+    display: inline-block; 
+    width: 100px;
+    font-size: 20px; 
+    text-align: center; 
+    padding: 30px; 
+    margin-left: 20px; 
+    margin-right: 20px; 
+    border: solid rgb(10,80,200) 2px;
+    background-color: rgb(10,80,100); 
+    color: white; 
+}
+
+.button a {
+    color: white; 
+}
+
+.button:hover {
+    background-color: white; 
+}
+
+.button:hover a {
+    color: rgb(10,80,100); 
 }
 
 footer {

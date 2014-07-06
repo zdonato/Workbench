@@ -1,6 +1,8 @@
 var images = new Array();
 images[0] = "header.jpeg";
 images[1] = "header.png";
+images[2] = "kitchen.jpeg";
+images[3] = "bathroom.jpeg"; 
 
 var blocks = new Array(); 
 blocks[0] = "serv";

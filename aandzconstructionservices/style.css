@@ -22,6 +22,11 @@ header img {
     border: solid rgb(10,80,100) 2px; 
 }
 
+#pic {
+    width: 500px; 
+    height: 300px; 
+}
+
 #content { 
     width: 900px;
     height: 500px; 
@@ -214,33 +219,23 @@ article a:hover{
 }
 
 .button {
-    display: inline-block; 
-    width: 100px;
-    font-size: 20px; 
-    text-align: center; 
-    padding: 30px; 
-    margin-left: 20px; 
-    margin-right: 20px; 
-    border: solid rgb(10,80,200) 2px;
-    background-color: rgb(10,80,100); 
-    color: white; 
+    text-decoration: none; 
+    list-style: none; 
+    font-size: 25px;
+    padding-bottom: 20px; 
 }
 
 .button a {
     color: white; 
 }
 
-.button:hover {
-    background-color: white; 
-}
-
-.button:hover a {
-    color: rgb(10,80,100); 
+.serv {
+    padding: 20px; 
+    margin: 20px; 
 }
 
 footer {
-    position: absolute;
-    top: 750px;
+    position: relative;
     margin: auto;
     width: 900px;
     text-align: center;

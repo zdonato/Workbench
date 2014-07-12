@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <script src="jquery-1.11.1.js"> </script>
+    <div id="clickme">
+        Click here to move right
+    </div>
+    
+    <div id="clickright">
+        Click here to reset 
+    </div>
+    
+    <p id="book" style="position: relative"> I will move.... </p>
+
+    // This script will animate the p tag to move based on which option is clicked. 
+    <script> 
+        // Count the number of clicks total. 
+        var numClicks = 0; 
+        // Move the p tag if the clickme div is clicked. 
+        // Animate - CSS options, time to complete, function to be ran after animation. 
+        $( "#clickme" ).click(function() {$( "#book" ).animate( {left: "+=50", top: "+=50"}, 1000, function() {
+                        numClicks++; 
+                        if (numClicks > 3) {
+                            $("#book").hide();
+                        }
+                    }); });
+        // Reset the position of the p tag if the user chooses to.
+        // Use a function when it is clicked to put the tag back at its origin. 
+        $("#clickright").click(function() { $("#book").show().css({ top: 0, left: 0 }); numClicks = 0; }); 
+    </script> 
+</html>
